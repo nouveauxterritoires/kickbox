@@ -1,0 +1,30 @@
+## generic files to ignore
+*~
+*.DS_Store
+*.swp
+*.out
+*.log
+
+# java specific
+*.class
+
+# compilation folder
+target/
+
+# IDE specific
+.classpath
+.project
+.settings
+*.iws
+.idea/
+*.iml
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+build/
+pom.OLD
+src/main/filters/dev.properties
+logs/

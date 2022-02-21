@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="warn" name="Kickbox Api" packages="">
+	<properties>
+		<property name="name">kickbox</property>
+		<property name="pattern2">%d{yyyy-MM-dd HH:mm:ss.SSS} | %-5.5p | %-10.10t | %-20.20C:%-5.5L | %msg%n</property>
+		<!-- 
+		It will look like that:
+		2013-04-03 07:37:51.993 | WARN  | main       | lnetgateway.Server:56    | My app is logging stuff
+		-->
+		<property name="pattern">%d{HH:mm:ss.SSS} %-5level %logger{36}:%L - %msg%n</property>
+	</properties>		
+	
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="${pattern}"/>
+		</Console>
+		
+		 <RollingFile name="RollingFile" fileName="${log4j.path}/kickbox.log"
+				 filePattern="${log4j.path}/archives/$${date:yyyy-MM}/kickbox-%d{yyyy-MM-dd}-%i.log.gz" 
+				 immediateFlush="false">
+			<PatternLayout>
+				<pattern>${pattern}</pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="24" modulate="true"/><!-- Rotated every 24 hours -->
+				<SizeBasedTriggeringPolicy size="100 MB"/> <!-- Or every 10 MB -->
+			</Policies>
+			<DefaultRolloverStrategy max="100"/>
+		</RollingFile>
+		
+	</Appenders>
+	
+	
+	<Loggers>
+		
+		<Logger name="org.apache.hc" level="DEBUG" additivity="false">
+			<AppenderRef ref="RollingFile" />
+		</Logger>
+		
+		<Root level="DEBUG"> <!-- We log everything -->
+			<AppenderRef ref="Console"/>
+			<AppenderRef ref="RollingFile"/>
+		</Root>
+		
+	</Loggers>
+</configuration>
