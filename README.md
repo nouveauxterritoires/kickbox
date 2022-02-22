@@ -61,7 +61,7 @@ And now, package the application:
 
 # Use with Maven
 
-Add this info to your pom.xml to add the librairy in your project :
+Add this info to your pom.xml to add the library in your project :
 
 ```
 <dependency>
