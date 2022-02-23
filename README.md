@@ -61,7 +61,7 @@ And now, package the application:
 
 # Use with Maven
 
-The release artefact deployed on Central maven repository : https://repo1.maven.org/maven2/com/nouveauxterritoires/services/kickbox/
+The release artefact is deployed on the Central maven repository : https://repo1.maven.org/maven2/com/nouveauxterritoires/services/kickbox/
 
 Add this info to your pom.xml to add the library in your project :
 
