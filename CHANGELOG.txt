@@ -1,6 +1,10 @@
 CHANGES
 -------
 
+0.0.5 (2022-02-23)
+	- Fix bug on API Balance
+	- Update Javadoc 
+
 0.0.4 (2022-02-23)
 	- Deploy artefact to Central Maven Repository
 	

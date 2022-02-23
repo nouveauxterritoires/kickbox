@@ -126,19 +126,28 @@ public class KickBoxApi extends BaseHttpApi {
     
     
     /**
-     * Verifies the input {@code email} and returns {@code true} if email is valid and deliverable in other case
+     * Verifies the balance for this account and returns the balance.
      * returns {@code false}.
      * <p>
      * The {@code timeout} is maximum time, in milliseconds, for the API to complete a verification request.
      * If it is {@code null} will be used default value is 6000 ms.
      */
-    public ExtendedKickBoxResponse balance(String email, Long timeout) {
+    public ExtendedKickBoxResponse balance(Long timeout) {
         ExtendedKickBoxResponse response;
         if (timeout != null) {
-            response = get(Url.verifyV2().build(), new Email(email), new Timeout(timeout));
+            response = get(Url.balanceV2().build(), new Timeout(timeout));
         } else {
-            response = get(Url.verifyV2().build(), new Email(email));
+            response = get(Url.balanceV2().build());
         }
         return response;
+    }
+    
+    /**
+     * Verifies the balance for this account and returns the balance.
+     * returns {@code false}.
+     * <p>
+     */
+    public ExtendedKickBoxResponse balance() {
+        return balance(null);
     }
 }
