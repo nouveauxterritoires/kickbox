@@ -58,3 +58,15 @@ And now, package the application:
  ```
  mvn clean package
  ```
+
+# Use with Maven
+
+Add this info to your pom.xml to add the library in your project :
+
+```
+<dependency>
+	<groupId>com.nouveauxterritoires.services</groupId>
+  	<artifactId>kickbox</artifactId>
+  	<version>LATEST</version>
+</dependency> 
+```
