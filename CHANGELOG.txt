@@ -1,6 +1,9 @@
 CHANGES
 -------
 
+0.0.4 (2022-02-23)
+	- Deploy artefact to Central Maven Repository
+	
 0.0.3 (2022-02-21)
 	- Update Maven Deploy plugin to 3.0.0-M2
 	- Add CHANGELOG file

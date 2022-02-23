@@ -7,7 +7,6 @@ import lombok.Setter;
 
 /**
  * @author szagriichuk, jredondo
- * @date 20220211
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Getter

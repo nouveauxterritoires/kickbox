@@ -8,7 +8,6 @@ import com.nouveauxterritoires.services.kickbox.http.params.Email;
 import com.nouveauxterritoires.services.kickbox.http.params.Timeout;
 import com.nouveauxterritoires.services.kickbox.http.url.Url;
 import com.nouveauxterritoires.services.kickbox.model.ExtendedKickBoxResponse;
-import com.nouveauxterritoires.services.kickbox.model.KickBoxResponse;
 
 /**
  * The Java API for the <a href="http://docs.kickbox.io/docs/using-the-api">Kickbox.io</a> service.
@@ -64,7 +63,6 @@ import com.nouveauxterritoires.services.kickbox.model.KickBoxResponse;
  *
  *
  * @author szagriichuk, jredondo.
- * @date 20220211
  */
 public class KickBoxApi extends BaseHttpApi {
 	

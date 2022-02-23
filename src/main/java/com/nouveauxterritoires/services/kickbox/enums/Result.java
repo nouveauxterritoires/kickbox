@@ -4,7 +4,6 @@ import lombok.Getter;
 
 /**
  * @author szagriichuk, jredondo.
- * @date 20220211
  */
 public enum Result {
 	
