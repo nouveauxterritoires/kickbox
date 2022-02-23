@@ -9,7 +9,7 @@ import lombok.Getter;
  */
 public enum Uris {
 	
-    API("https://api.kickbox.io"), 
+    API("https://api.kickbox.com"), 
     VERIFY("verify"), 
     BALANCE("balance"), 
     V2("v2");

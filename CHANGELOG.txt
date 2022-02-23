@@ -1,6 +1,9 @@
 CHANGES
 -------
 
+0.0.6 (2022-02-23)
+	- Add live API unit tests 
+	
 0.0.5 (2022-02-23)
 	- Fix bug on API Balance
 	- Update Javadoc 

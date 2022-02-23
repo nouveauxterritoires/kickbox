@@ -17,21 +17,22 @@ public class KickBoxApiBalanceTest  implements KickBoxApiTest {
 	// Initialize Logger
 	public static Logger logger = LogManager.getLogger(KickBoxApiBalanceTest.class);
 
-	private final KickBoxApi kickBoxApi = new KickBoxApi(API_KEY_SANDBOX);
+	private final KickBoxApi kickBoxApiSanbox = new KickBoxApi(API_KEY_SANDBOX);
+	private final KickBoxApi kickBoxApiLive = new KickBoxApi(API_KEY_LIVE);
 
 	
 	
 	// Insufficient balance results
 	@Test
     public void testVerifyInsufficientBalanceError1() throws Exception {
-        boolean response = kickBoxApi.verify("insufficient-balance@example.com");
+        boolean response = kickBoxApiSanbox.verify("insufficient-balance@example.com");
         logger.debug("response : " + response);
         assertFalse(response);
     }
 	
 	@Test
     public void testVerifyInsufficientBalanceError2() throws Exception {
-        boolean response = kickBoxApi.verify("henry+insufficient-balance@example.com");
+        boolean response = kickBoxApiSanbox.verify("henry+insufficient-balance@example.com");
         logger.debug("response : " + response);
         assertFalse(response);
     }
@@ -39,7 +40,7 @@ public class KickBoxApiBalanceTest  implements KickBoxApiTest {
 	// Insufficient balance results with response
 	@Test
     public void testVerifyInsufficientBalanceErrorResponse() throws Exception {
-		ExtendedKickBoxResponse kickBoxResponse = kickBoxApi.verifyWithResponse("henry+insufficient-balance@example.com");
+		ExtendedKickBoxResponse kickBoxResponse = kickBoxApiSanbox.verifyWithResponse("henry+insufficient-balance@example.com");
     	logger.debug("kickBoxResponse : " + kickBoxResponse.getKickboxResponse().toString());
         
         assertFalse(kickBoxResponse.getKickboxResponse().isSuccess());
@@ -47,5 +48,15 @@ public class KickBoxApiBalanceTest  implements KickBoxApiTest {
 
     }
     
-    
+	// Insufficient balance results with response
+	@Test
+    public void testVerifyBalanceResponse() throws Exception {
+		ExtendedKickBoxResponse kickBoxResponse = kickBoxApiLive.balance();
+    	logger.debug("kickBoxResponse : " + kickBoxResponse.getKickboxResponse().toString());
+        
+        assertTrue(kickBoxResponse.getKickboxResponse().isSuccess());
+        assert(kickBoxResponse.getKickboxResponse().getBalance() >= 0);
+
+    }
+	    
 }

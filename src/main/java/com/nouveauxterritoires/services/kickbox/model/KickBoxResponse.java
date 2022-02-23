@@ -26,6 +26,7 @@ public class KickBoxResponse {
     private String domain;
     private boolean success;
     private String message;
+    private int balance;
 
     @Override
     public String toString() {
@@ -43,6 +44,7 @@ public class KickBoxResponse {
                 ", domain='" + domain + '\'' +
                 ", success=" + success +
                 ", message=" + message +
+                ", balance=" + balance +
                 '}';
     }
 }
