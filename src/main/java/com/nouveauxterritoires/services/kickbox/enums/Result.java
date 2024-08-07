@@ -7,10 +7,10 @@ import lombok.Getter;
  */
 public enum Result {
 	
-    DELIVERABLE("deliverable"), 
-    UNDELIVERABLE("undeliverable"), 
-    RISKY("risky"), 
-    UNKNOWN("unknown");
+    DELIVERABLE("DELIVERABLE"), 
+    UNDELIVERABLE("UNDELIVERABLE"), 
+    RISKY("RISKY"), 
+    UNKNOWN("UNKNOWN");
 
 	@Getter
     private String value;

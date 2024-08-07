@@ -4,17 +4,17 @@ import lombok.Getter;
 
 public enum Reason {
 
-	INVALID_EMAIL("invalid_email"),
-	INVALID_DOMAIN("invalid_domain"),
-	REJECTED_EMAIL("rejected_email"), 
-	ACCEPTED_EMAIL("accepted_email"), 
-	LOW_QUALITY("low_quality"),
-	LOW_DELIVERABILITY("low_deliverability"),
-	NO_CONNECT("no_connect"),
-	TIMEOUT("timeout"),
-    INVALID_SMTP("invalid_smtp"),
-    UNAVAILABLE_SMTP("unavailable_smtp"),
-	UNEXPECTED_ERROR("unexpected_error");
+	INVALID_EMAIL("INVALID_EMAIL"),
+	INVALID_DOMAIN("INVALID_DOMAIN"),
+	REJECTED_EMAIL("REJECTED_EMAIL"), 
+	ACCEPTED_EMAIL("ACCEPTED_EMAIL"), 
+	LOW_QUALITY("LOW_QUALITY"),
+	LOW_DELIVERABILITY("LOW_DELIVERABILITY"),
+	NO_CONNECT("NO_CONNECT"),
+	TIMEOUT("TIMEOUT"),
+    INVALID_SMTP("INVALID_SMTP"),
+    UNAVAILABLE_SMTP("UNAVAILABLE_SMTP"),
+	UNEXPECTED_ERROR("UNEXPECTED_ERROR");
     
 	@Getter
     private String value;

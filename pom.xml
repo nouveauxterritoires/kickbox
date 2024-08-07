@@ -273,6 +273,13 @@
 			</properties>
 		</profile>
 		<profile>
+			<id>test</id>
+			<properties>
+				<env>test</env>
+				<maven.test.failure.ignore>false</maven.test.failure.ignore>
+			</properties>
+		</profile>
+		<profile>
 			<id>github</id>
 			<properties>
 				<env>dev</env>
